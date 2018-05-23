@@ -1,0 +1,107 @@
+﻿<Controls:MetroWindow x:Class="WpfAppClient.ClientWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                      xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        xmlns:local="clr-namespace:WpfAppClient"
+        mc:Ignorable="d"
+         Title="MainWindow" Height="570" Width="750">
+    <Window.Resources>
+        <ResourceDictionary Source="Dictionary1.xaml"/>
+
+    </Window.Resources>
+
+    <TabControl Name="tabControl1"  >
+        <TabItem Visibility="Collapsed">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+
+                <Border CornerRadius="15" Background="Gray" Margin="5">
+
+                    <DockPanel Name="docColPeople" Margin="15,0" LastChildFill="False">
+
+                        <Label Content="Дата заезда:" VerticalAlignment="Center"/>
+                        <DatePicker  Name="dpicBegin" Height="30" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5"  >
+                        </DatePicker>
+                        <Label Content="Дата выезда:" VerticalAlignment="Center"/>
+                        <DatePicker Name="dpicEnd" Height="30" VerticalAlignment="Center" Margin="5">
+                        </DatePicker>
+                        <Label Content="Количество человек:" VerticalAlignment="Center"/>
+                        <ComboBox Name="ComboBoxCol" 
+                          VerticalAlignment="Center"
+                          VerticalContentAlignment="Center"
+                          HorizontalContentAlignment="Center"
+                          Width="50" Cursor="Arrow" SelectedIndex="0">
+                            <TextBlock>2</TextBlock>
+                            <TextBlock>3</TextBlock>
+                            <TextBlock>4</TextBlock>
+                            <TextBlock>5</TextBlock>
+                            <TextBlock>6</TextBlock>
+                            <TextBlock>7</TextBlock>
+                        </ComboBox>
+                        <Button Content="Поиск" DockPanel.Dock="Right" Click="Button_ClickSearch"/>
+                    </DockPanel>
+
+                </Border>
+
+
+
+                <ListBox x:Name="ListBox1" Grid.Row="1" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ItemTemplate="{StaticResource ListBoxTemplate}" SelectionChanged="ListBox1_SelectionChanged"/>
+                <DockPanel Name="dockPanel" Grid.Row="2">
+                    <Button Name="butShow" Content="Подробнее" Click="butOrder_Click" IsEnabled="False"/>
+
+                </DockPanel>
+            </Grid>
+        </TabItem>
+        <TabItem Visibility="Collapsed" >
+            <Grid Name="grid">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+
+                <Button Name="butBack" Content="Назад" Width="100" HorizontalAlignment="Left" Click="butBack_Click"/>
+
+                <StackPanel Grid.Row="1">
+                    <TextBlock Text="{Binding Info_Room}" FontSize="18" TextWrapping="Wrap" HorizontalAlignment="Left" Width="350"/>
+                    <Image Source="{Binding Images}" Width="300" Height="200" Margin="20" HorizontalAlignment="Left" Stretch="Fill"/>
+                    <DockPanel Grid.Row="3" Name="docRadio">
+                        <Label Height="25" HorizontalAlignment="Left"  VerticalAlignment="Top" >Еда:</Label>
+                        <RadioButton  Name="rbFoodFull" Margin="5" GroupName="gFood" Content="Полное"  Checked="rbFoodFull_Checked" ></RadioButton>
+                        <RadioButton Name="rbFoodBreakfast" Margin="5" GroupName="gFood" Content="Завтрак"  Checked="rbFoodBreakfast_Checked"></RadioButton>
+                        <RadioButton Name="rbNoFoodt" Margin="5" GroupName="gFood" Content="Без питания" Checked="rbNoFoodt_Checked" IsChecked="True"></RadioButton>
+                    </DockPanel>
+                    <DockPanel Grid.Row="4" Name="docCheck" >
+                        <CheckBox Name="chbCar" Margin="4"  Content="Машина"></CheckBox>
+                        <CheckBox Name="chbTwoRoom" Margin="4" Content="Двухкомнатный номер" ></CheckBox>
+                        <CheckBox Name="chbAnimals" Margin="4" Content="Животные"></CheckBox>
+                    </DockPanel>
+
+                    <DockPanel LastChildFill="False">
+                        <Label Content="Дата заезда:" VerticalAlignment="Center"/>
+                        <DatePicker  Name="dpicBegin1" Height="30" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5"  >
+                        </DatePicker>
+                        <Label Content="Дата выезда:" VerticalAlignment="Center"/>
+                        <DatePicker Name="dpicEnd1" Height="30" VerticalAlignment="Center" Margin="5">
+                        </DatePicker>
+                    </DockPanel>
+
+                    <Button Content="Заказать" Width="100" HorizontalAlignment="Left" Click="butOr_Click"/>
+                </StackPanel>
+
+            </Grid>
+        </TabItem>
+
+
+
+
+
+
+    </TabControl>
+</Controls:MetroWindow>

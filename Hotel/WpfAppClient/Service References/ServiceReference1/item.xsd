@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:8733/Design_Time_Addresses/Hotel/HotelService/?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Hotel.DataModel.Room" />
+  <xs:import schemaLocation="http://localhost:8733/Design_Time_Addresses/Hotel/HotelService/?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Hotel.DataModel" />
+  <xs:element name="GetRoom">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRoomResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Hotel.DataModel.Room" minOccurs="0" name="GetRoomResult" nillable="true" type="q1:ArrayOfRoom_Table" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Time_GetRoom">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="begin" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="end" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Time_GetRoomResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Hotel.DataModel.Room" minOccurs="0" name="Time_GetRoomResult" nillable="true" type="q2:ArrayOfRoom_Table" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="addTime_Room">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="begin" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="end" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="number" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="addTime_RoomResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddClient">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="mobile_" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pass_" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="email_" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="food_" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="lastName_" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="firstName_" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddClientResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Autorisationn">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="login" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pass" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AutorisationnResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Hotel.DataModel" minOccurs="0" name="AutorisationnResult" nillable="true" type="q3:Client_Tenant" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

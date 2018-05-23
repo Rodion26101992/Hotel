@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="HotelService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:8733/Design_Time_Addresses/Hotel/HotelService/?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:8733/Design_Time_Addresses/Hotel/HotelService/?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:8733/Design_Time_Addresses/Hotel/HotelService/?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Hotel.DataModel.Room" />
+      <xsd:import schemaLocation="http://localhost:8733/Design_Time_Addresses/Hotel/HotelService/?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Hotel.DataModel" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IHotelService_GetRoom_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRoom" />
+  </wsdl:message>
+  <wsdl:message name="IHotelService_GetRoom_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRoomResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHotelService_Time_GetRoom_InputMessage">
+    <wsdl:part name="parameters" element="tns:Time_GetRoom" />
+  </wsdl:message>
+  <wsdl:message name="IHotelService_Time_GetRoom_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Time_GetRoomResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHotelService_addTime_Room_InputMessage">
+    <wsdl:part name="parameters" element="tns:addTime_Room" />
+  </wsdl:message>
+  <wsdl:message name="IHotelService_addTime_Room_OutputMessage">
+    <wsdl:part name="parameters" element="tns:addTime_RoomResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHotelService_AddClient_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddClient" />
+  </wsdl:message>
+  <wsdl:message name="IHotelService_AddClient_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddClientResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHotelService_Autorisationn_InputMessage">
+    <wsdl:part name="parameters" element="tns:Autorisationn" />
+  </wsdl:message>
+  <wsdl:message name="IHotelService_Autorisationn_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AutorisationnResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IHotelService">
+    <wsdl:operation name="GetRoom">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceRoom/GetRoom" message="tns:IHotelService_GetRoom_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceRoom/GetRoomResponse" message="tns:IHotelService_GetRoom_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Time_GetRoom">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceRoom/Time_GetRoom" message="tns:IHotelService_Time_GetRoom_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceRoom/Time_GetRoomResponse" message="tns:IHotelService_Time_GetRoom_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="addTime_Room">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceRoom/addTime_Room" message="tns:IHotelService_addTime_Room_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceRoom/addTime_RoomResponse" message="tns:IHotelService_addTime_Room_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddClient">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHotelService/AddClient" message="tns:IHotelService_AddClient_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHotelService/AddClientResponse" message="tns:IHotelService_AddClient_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Autorisationn">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHotelService/Autorisationn" message="tns:IHotelService_Autorisationn_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHotelService/AutorisationnResponse" message="tns:IHotelService_Autorisationn_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IHotelService" type="tns:IHotelService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetRoom">
+      <soap:operation soapAction="http://tempuri.org/IServiceRoom/GetRoom" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Time_GetRoom">
+      <soap:operation soapAction="http://tempuri.org/IServiceRoom/Time_GetRoom" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addTime_Room">
+      <soap:operation soapAction="http://tempuri.org/IServiceRoom/addTime_Room" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddClient">
+      <soap:operation soapAction="http://tempuri.org/IHotelService/AddClient" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Autorisationn">
+      <soap:operation soapAction="http://tempuri.org/IHotelService/Autorisationn" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="HotelService">
+    <wsdl:port name="BasicHttpBinding_IHotelService" binding="tns:BasicHttpBinding_IHotelService">
+      <soap:address location="http://localhost:8733/Design_Time_Addresses/Hotel/HotelService/" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

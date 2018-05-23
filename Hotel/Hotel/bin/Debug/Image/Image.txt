@@ -1,0 +1,1 @@
+Icon="Hotel\bin\Debug\Image\key_autoriz.png" 

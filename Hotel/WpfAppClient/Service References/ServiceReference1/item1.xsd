@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Hotel.DataModel" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Hotel.DataModel" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="Client_Tenant">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Car" nillable="true" type="tns:Car_Table" />
+      <xs:element minOccurs="0" name="Car_Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Client_TenantId" type="xs:int" />
+      <xs:element minOccurs="0" name="Email" nillable="true" type="tns:Email_Table" />
+      <xs:element minOccurs="0" name="Email_Id" type="xs:int" />
+      <xs:element minOccurs="0" name="FirstName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Food" nillable="true" type="tns:Food_Table" />
+      <xs:element minOccurs="0" name="Food_Id" type="xs:int" />
+      <xs:element minOccurs="0" name="LastName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Mobile" nillable="true" type="tns:Mobile_Table" />
+      <xs:element minOccurs="0" name="Mobile_Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Pass_Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Passw" nillable="true" type="tns:Password_Table" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Client_Tenant" nillable="true" type="tns:Client_Tenant" />
+  <xs:complexType name="Car_Table">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Car_TableId" type="xs:int" />
+      <xs:element minOccurs="0" name="Info_Car" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Car_Table" nillable="true" type="tns:Car_Table" />
+  <xs:complexType name="Email_Table">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Email_TableId" type="xs:int" />
+      <xs:element minOccurs="0" name="Info_Email" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Email_Table" nillable="true" type="tns:Email_Table" />
+  <xs:complexType name="Food_Table">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Food_TableId" type="xs:int" />
+      <xs:element minOccurs="0" name="Info_Food" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Food_Table" nillable="true" type="tns:Food_Table" />
+  <xs:complexType name="Mobile_Table">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Mobile_TableId" type="xs:int" />
+      <xs:element minOccurs="0" name="Nuber" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Mobile_Table" nillable="true" type="tns:Mobile_Table" />
+  <xs:complexType name="Password_Table">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Pass" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Password_TableId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Password_Table" nillable="true" type="tns:Password_Table" />
+</xs:schema>
